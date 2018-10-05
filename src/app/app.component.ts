@@ -7,6 +7,6 @@ import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'My First Angular App!';
+  title = 'LSST-Labeler';
 
 }
