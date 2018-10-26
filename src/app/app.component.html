@@ -32,6 +32,7 @@
 
 <!-- label Grid Section -->
 <section class="label" id="label">
+  <h1 style = "padding-left:340px">Is this a Star?</h1>
   <div class="container">
     <!-- <h2 class="text-center text-uppercase text-secondary mb-0">label</h2>
     <hr class="star-dark mb-5"> -->
@@ -40,18 +41,27 @@
         <img id="label_image" src="assets/img/commet.png" >
       </div>
       <div class="col-2">
-          <a class="btn btn-xl btn-outline-dark label_option">
-            <i class="fas fa-check" style="padding-right:5px"></i>
-            Yup
-          </a>
-          <a class="btn btn-xl btn-outline-dark label_option">
-            <i class="fas fa-times" style="padding-right:5px"></i>
-            Nope
-          </a>
-          <a class="btn btn-xl btn-outline-dark label_option">
-            <i class="fa fa-question" aria-hidden="true" style="padding-right:5px"></i>
-            Help
-          </a>
+        <button (click)="LabeledYes()" class="test">
+          <i class="fas fa-check" style="padding-right:5px"></i>
+          Yup
+        </button>
+        <button (click)="LabeledNo()" class="test">
+          <i class="fas fa-times" style="padding-right:5px"></i>
+          Nope
+        </button>
+        <button  class="test">
+          <i class="fa fa-question" aria-hidden="true" style="padding-right:5px"></i>
+          Don't Know
+        </button>
+        <button (click)="NextImage()" class="test">
+          Submit
+        </button>
+        <div *ngIf="yesLabel">
+          <p> You labeled Yes! </p>
+        </div>
+        <div *ngIf="noLabel">
+          <p> You labeled No! </p>
+        </div>
       </div>
 
     </div> <!--end of first row -->

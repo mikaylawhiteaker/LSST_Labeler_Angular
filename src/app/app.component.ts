@@ -8,5 +8,24 @@ import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 })
 export class AppComponent {
   title = 'LSST-Labeler';
+  yesLabel : boolean = false;
+  noLabel : boolean = false;
+  imageCount : int = 0;
 
+
+  LabeledYes(){
+    this.yesLabel = true;
+    this.noLabel = false;
+  }
+
+  LabeledNo(){
+    this.noLabel = true;
+    this.yesLabel = false;
+  }
+
+  NextImage(){
+    this.noLabel = false;
+    this.yesLabel = false;
+    imageCount++;
+  }
 }
