@@ -1,0 +1,41 @@
+<form *ngIf="!foundUser&&!registerb" [formGroup]="loginForm">
+
+  <label>
+    Username:
+    <input type="text" formControlName="username">
+  </label>
+
+  <label>
+    Password:
+    <input type="text" formControlName="password">
+  </label>
+
+  <button (click)="onLogin()">Login</button>
+  <button (click)="register()">Register</button>
+</form>
+<form *ngIf="registerb&&!registered" [formGroup]="loginForm" (ngSubmit)="onRegister()">
+
+  <label>
+    New Username:
+    <input type="text" formControlName="username">
+  </label>
+
+  <label>
+    New Password:
+    <input type="text" formControlName="password">
+  </label>
+  <label>
+    Are you a robot?:
+    <input type="text" formControlName="robot">
+  </label>
+  <button type="submit" [disabled]="!loginForm.valid">Register</button>
+</form>
+<div *ngIf="foundUser">
+  <p> {{ welcome }} </p>
+</div>
+<div *ngIf="registered">
+  <p> {{ welcomeNew }} </p>
+</div>
+<div *ngIf="invalidloginb">
+  <p> {{ invalidlogin }} </p>
+</div>

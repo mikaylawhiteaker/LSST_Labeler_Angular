@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
+export type EditorType = 'login';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,6 +14,8 @@ export class AppComponent {
   noLabel : boolean = false;
   dontKnow : boolean = false;
   selectionMade : boolean = true;
+  loggedIn : boolean = false;
+  login : boolean = true;
   imageLabels : number[] = [];
   imageCount : number = 0;
   imageURLs : string[] = ["http://en.es-static.us/upl/2011/07/regulus_leo_i_dwarf_Russell_Croman_600.jpg",
@@ -72,4 +76,15 @@ export class AppComponent {
     this.imageURL = this.imageURLs[this.imageCount];
   }
 
+  Login(user: any)
+  {
+    this.login = false;
+    this.loggedIn = true;
+  }
+
+  newUser()
+  {
+    this.login = false;
+    this.loggedIn = true;
+  }
 }
