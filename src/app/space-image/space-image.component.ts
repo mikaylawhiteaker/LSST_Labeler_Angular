@@ -11,14 +11,16 @@ export class SpaceImageComponent implements OnInit {
 
   link: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.getSpaceImage()
+      .subscribe( data  => this.link = data['url']);
+  }
 
-  ngOnInit() {
-    this.http.post('https://atjbvyzow2.execute-api.eu-west-1.amazonaws.com/Beta/Images', null).subscribe(data => {
-      console.log(data);
-    });
+  ngOnInit() { }
 
-    this.link = "https://s3-us-west-2.amazonaws.com/lsst-images/006c9e16-8a04-4511-8a8b-e2ece558ba0b.jpg";
+  getSpaceImage() {
+    this.http.options("https://c4gyp3nm40.execute-api.eu-west-1.amazonaws.com/default/get_random_image_data").subscribe(data => console.log(data));
+    return this.http.get("https://c4gyp3nm40.execute-api.eu-west-1.amazonaws.com/default/get_random_image_data");
   }
 
 }
