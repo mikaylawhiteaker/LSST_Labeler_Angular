@@ -13,14 +13,20 @@ export class SpaceImageComponent implements OnInit {
 
   constructor(private http: HttpClient) { 
     this.getSpaceImage()
-      .subscribe( data  => this.link = data['url']);
+      .subscribe( (data: SpaceImage)  => this.link = JSON.parse(data.body)['url']);
   }
 
   ngOnInit() { }
 
   getSpaceImage() {
-    this.http.options("https://c4gyp3nm40.execute-api.eu-west-1.amazonaws.com/default/get_random_image_data").subscribe(data => console.log(data));
-    return this.http.get("https://c4gyp3nm40.execute-api.eu-west-1.amazonaws.com/default/get_random_image_data");
+    this.http.options("https://bypff11t87.execute-api.us-west-2.amazonaws.com/default/random_image");
+    return this.http.get("https://bypff11t87.execute-api.us-west-2.amazonaws.com/default/random_image");
   }
 
+}
+
+class SpaceImage {
+  body;
+  headers;
+  statusCode;
 }
