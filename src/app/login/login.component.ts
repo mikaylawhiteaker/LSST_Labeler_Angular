@@ -1,80 +1,128 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+// import { Component, OnInit } from '@angular/core';
+// import { FormGroup, FormControl } from '@angular/forms';
+//
+// @Component({
+//   selector: 'app-login',
+//   templateUrl: './login.component.html',
+//   styleUrls: ['./login.component.css']
+// })
+// export class LoginComponent{
+//   usernames : string[] = ["David", "Mikayla", "Brandon", "Maggie"];
+//   password : string[] = ["Large", "Synoptic", "Survey", "Telescope"];
+//   currentuser : string;
+//   currentpass : string;
+//   robot : string;
+//   usernameC : number = 0;
+//   invalidlogin : string = "Invalid Login!";
+//   invalidloginb : boolean = false;
+//   foundUser : boolean = false;
+//   registerb : boolean = false;
+//   registered : boolean = false;
+//   welcome : string;
+//   welcomeNew: string;
+//
+//
+//   loginForm = new FormGroup({
+//     username: new FormControl(''),
+//     password: new FormControl(''),
+//     notarobot: new FormControl('')
+//   });
+//
+//   onLogin()
+//   {
+//     this.currentuser = this.loginForm.get('username').value;
+//     this.currentpass = this.loginForm.get('password').value;
+//     for(let user of this.usernames)
+//     {
+//       if(user.localeCompare(this.currentuser) == 0)
+//       {
+//         if(this.currentpass.localeCompare(this.password[this.usernameC])==0)
+//         {
+//           this.foundUser = true;
+//         }
+//         break;
+//       }
+//       this.usernameC++;
+//     }
+//     if(this.foundUser)
+//     {
+//       this.welcome = "Welcome back " + this.currentuser;
+//       this.invalidloginb = false;
+//     }
+//     else
+//     {
+//       this.invalidloginb = true;
+//     }
+//   }
+//
+//   register(){
+//     this.registerb = true;
+//   }
+//
+//   onRegister(){
+//       this.currentuser = this.loginForm.get('username').value;
+//       this.currentpass = this.loginForm.get('password').value;
+//       this.robot = this.loginForm.get('robot').value;
+//       if(this.robot.localeCompare("no") == 0)
+//       {
+//         this.usernames.push(this.currentuser);
+//         this.password.push(this.currentpass);
+//         this.registered = true;
+//         this.welcomeNew = "Welcome to LSST Labeler " + this.currentuser;
+//       }
+//   }
+//
+//   constructor() { }
+//
+//   ngOnInit() {
+//   }
+//
+// }
+import {Component, Inject} from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+
+export interface DialogData {
+  username: string;
+  password: string;
+}
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent{
-  usernames : string[] = ["David", "Mikayla", "Brandon", "Maggie"];
-  password : string[] = ["Large", "Synoptic", "Survey", "Telescope"];
-  currentuser : string;
-  currentpass : string;
-  robot : string;
-  usernameC : number = 0;
-  invalidlogin : string = "Invalid Login!";
-  invalidloginb : boolean = false;
-  foundUser : boolean = false;
-  registerb : boolean = false;
-  registered : boolean = false;
-  welcome : string;
-  welcomeNew: string;
+export class LoginComponent {
+  animal: string;
+  name: string;
 
+  constructor(public dialog: MatDialog) {}
 
-  loginForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
-    notarobot: new FormControl('')
-  });
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+      width: '300px',
+      data: {name: this.name, animal: this.animal}
+    });
 
-  onLogin()
-  {
-    this.currentuser = this.loginForm.get('username').value;
-    this.currentpass = this.loginForm.get('password').value;
-    for(let user of this.usernames)
-    {
-      if(user.localeCompare(this.currentuser) == 0)
-      {
-        if(this.currentpass.localeCompare(this.password[this.usernameC])==0)
-        {
-          this.foundUser = true;
-        }
-        break;
-      }
-      this.usernameC++;
-    }
-    if(this.foundUser)
-    {
-      this.welcome = "Welcome back " + this.currentuser;
-      this.invalidloginb = false;
-    }
-    else
-    {
-      this.invalidloginb = true;
-    }
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
   }
+}
 
-  register(){
-    this.registerb = true;
-  }
+@Component({
+  selector: 'dialog-overview-example-dialog',
+  templateUrl: 'dialog-overview-example-dialog.html',
+  styleUrls: ['./login.component.css']
+})
+export class DialogOverviewExampleDialog {
 
-  onRegister(){
-      this.currentuser = this.loginForm.get('username').value;
-      this.currentpass = this.loginForm.get('password').value;
-      this.robot = this.loginForm.get('robot').value;
-      if(this.robot.localeCompare("no") == 0)
-      {
-        this.usernames.push(this.currentuser);
-        this.password.push(this.currentpass);
-        this.registered = true;
-        this.welcomeNew = "Welcome to LSST Labeler " + this.currentuser;
-      }
-  }
+  constructor(
+    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 
-  constructor() { }
-
-  ngOnInit() {
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }

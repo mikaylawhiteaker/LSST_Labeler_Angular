@@ -15,7 +15,7 @@
           <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
         </li>
         <li class="nav-item mx-0 mx-lg-1">
-          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#login">Login</a>
+          <app-login></app-login>
         </li>
       </ul>
     </div>
@@ -34,7 +34,7 @@
 </header>
 
 <div class="login" id="login" style = padding-top:10px>
-  <app-login></app-login>
+
 </div>
 
 <!-- label Grid Section -->
@@ -45,7 +45,7 @@
     <hr class="star-dark mb-5"> -->
     <div class="row">
       <div class="col-9">
-        <img id="label_image" src="{{imageURL}}">
+        <app-space-image></app-space-image>
       </div>
       <div class="col-2">
         <button (click)="LabeledYes()" class="test">
