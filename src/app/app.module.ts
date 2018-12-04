@@ -13,12 +13,12 @@ import { SpaceImageComponent } from './space-image/space-image.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    LabelComponent
+    LabelComponent,
+    SpaceImageComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    SpaceImageComponent,
     HttpClientModule
   ],
   providers: [],
