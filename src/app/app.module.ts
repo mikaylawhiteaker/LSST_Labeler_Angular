@@ -17,7 +17,7 @@ import { SpaceImageComponent } from './space-image/space-image.component';
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
     SpaceImageComponent,
     HttpClientModule
   ],
