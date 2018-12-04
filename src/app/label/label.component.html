@@ -1,0 +1,45 @@
+
+<h1 style = "padding-left:360px">Is this a star?</h1>
+<div class="container">
+  <!-- <h2 class="text-center text-uppercase text-secondary mb-0">label</h2>
+  <hr class="star-dark mb-5"> -->
+  <div class="row">
+    <div class="col-9">
+      <img id="label_image" src="{{imageURL}}">
+    </div>
+    <div class="col-2">
+      <button (click)="LabeledYes()" class="test">
+        <i class="fas fa-check" style="padding-right:5px"></i>
+        Yup
+      </button>
+      <button (click)="LabeledNo()" class="test">
+        <i class="fas fa-times" style="padding-right:5px"></i>
+        Nope
+      </button>
+      <button (click)="NextImage()" class="test">
+        Submit
+      </button>
+      <div *ngIf="dontKnow">
+        <h2> You Don't Know?!?!? </h2>
+      </div>
+      <div *ngIf="yesLabel">
+        <h2> You labeled Yes! </h2>
+      </div>
+      <div *ngIf="noLabel">
+        <h2> You labeled No! </h2>
+      </div>
+      <div *ngIf="selectionMade">
+        <h2>Make a selection!</h2>
+      </div>
+    </div>
+
+  </div> <!--end of first row -->
+  <div id="label_info">
+    <h4 class="font-weight-light mb-0">
+      How to Classify
+    </h4>
+    <p>
+        We are looking at asteroids from all over the sky. Sometimes the patch of sky will be crowded with background stars that might make it harder to identify whether the asteroid has a coma/tail as well as make it hard to identify which source in the image is the asteroid. We want to know about that. Look at the asteroid image (large image on left with purple crosshairs). If you see more than one source in the central region bordered by the crosshairs, answer 'yes'. Compare the center region to the examples below.
+    </p>
+  </div>
+</div>
