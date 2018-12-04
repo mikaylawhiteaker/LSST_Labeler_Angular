@@ -7,8 +7,10 @@
 
   <label>
     Password:
-    <input type="text" formControlName="password">
+    <input type="password" formControlName="password">
   </label>
+
+  <input type="checkbox" onclick="showPass()">
 
   <button (click)="onLogin()">Login</button>
   <button (click)="register()">Register</button>
@@ -22,8 +24,11 @@
 
   <label>
     New Password:
-    <input type="text" formControlName="password">
+    <input type="password" formControlName="password">
   </label>
+
+  <input type="checkbox" onclick="showPass()">
+
   <label>
     Are you a robot?:
     <input type="text" formControlName="robot">

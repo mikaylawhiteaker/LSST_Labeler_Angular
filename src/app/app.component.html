@@ -15,7 +15,7 @@
           <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
         </li>
         <li class="nav-item mx-0 mx-lg-1">
-          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="login.html">Login</a>
+          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#login">Login</a>
         </li>
       </ul>
     </div>
@@ -33,7 +33,7 @@
   </div>
 </header>
 
-<div class="label" id="login" style = padding-top:10px>
+<div class="login" id="login" style = padding-top:10px>
   <app-login></app-login>
 </div>
 
@@ -55,10 +55,6 @@
         <button (click)="LabeledNo()" class="test">
           <i class="fas fa-times" style="padding-right:5px"></i>
           Nope
-        </button>
-        <button (click)="DontKnow()" class="test">
-          <i class="fa fa-question" aria-hidden="true" style="padding-right:5px"></i>
-          Don't Know
         </button>
         <button (click)="NextImage()" class="test">
           Submit
