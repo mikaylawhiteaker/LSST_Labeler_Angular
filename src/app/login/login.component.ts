@@ -72,16 +72,6 @@ export class LoginComponent{
       }
   }
 
-  showPass()
-  {
-    var x = document.getElementById("myInput");
-    if (this.x.type === "password") {
-      this.x.type = "text";
-    } else {
-      this.x.type = "password";
-    }
-  }
-
   constructor() { }
 
   ngOnInit() {
