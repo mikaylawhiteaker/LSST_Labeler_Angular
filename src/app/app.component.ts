@@ -40,6 +40,8 @@ export class AppComponent {
 /*Method where on the click of the submit button check to see if the user
  *selected and no, yes or don't know. Based on the image count it updates the
  *array of image labels with a 0,1,or 2 respectively.
+
+ 
  */
   NextImage(){
     if(this.yesLabel)
