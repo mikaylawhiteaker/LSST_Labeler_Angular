@@ -1,0 +1,16 @@
+.test{
+  height:75px;
+  width:175px;
+}
+#label_image {
+  width: 100%;
+}
+
+.label_option {
+  width: 100%;
+  margin: 5%;
+}
+
+#label_info {
+  padding-top: 2%;
+}
