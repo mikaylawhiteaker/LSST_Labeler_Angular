@@ -14,7 +14,7 @@
 
   <button (click)="onLogin()">Login</button>
   <button (click)="register()">Register</button>
-</form>
+</form> 
 <form *ngIf="registerb&&!registered" [formGroup]="loginForm" (ngSubmit)="onRegister()">
 
   <label>
