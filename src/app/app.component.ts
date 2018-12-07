@@ -22,45 +22,6 @@ export class AppComponent {
                     "https://s3-us-west-2.amazonaws.com/lsst-images/c5080b17-d532-4cc1-ab1a-8245fd3d490b.jpg"];
   imageURL: string = "http://en.es-static.us/upl/2011/07/regulus_leo_i_dwarf_Russell_Croman_600.jpg";
 
-  LabeledYes(){
-    this.yesLabel = true;
-    this.selectionMade = false;
-    this.noLabel = false;
-  }
-
-  LabeledNo(){
-    this.noLabel = true;
-    this.selectionMade = false;
-    this.yesLabel = false;
-  }
-
-/*Method where on the click of the submit button check to see if the user
- *selected and no, yes or don't know. Based on the image count it updates the
- *array of image labels with a 0,1,or 2 respectively.
-
- 
- */
-  NextImage(){
-    if(this.yesLabel)
-    {
-      this.yesLabel = false;
-      this.selectionMade = true;
-      this.imageLabels[this.imageCount] = 1;
-      this.imageCount++;
-    }
-    else if(this.noLabel)
-    {
-      this.noLabel = false;
-      this.selectionMade = true;
-      this.imageLabels[this.imageCount] = 0;
-      this.imageCount++;
-    }
-    if(this.imageURLs[this.imageCount] == null)
-    {
-      this.imageCount = 0;
-    }
-    this.imageURL = this.imageURLs[this.imageCount];
-  }
 
 
   Login(user: any)

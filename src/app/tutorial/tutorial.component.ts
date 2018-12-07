@@ -39,7 +39,7 @@ export class TutorialComponent {
 })
 export class DialogOverviewExampleDialogTutorial {
   tutorialPage : number = 1;
-
+  pageOne = true;
 
   constructor(
     public dialogRef: MatDialogRef<DialogOverviewExampleDialogTutorial>,
