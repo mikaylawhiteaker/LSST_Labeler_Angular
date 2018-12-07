@@ -10,6 +10,7 @@ import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { LoginComponent, DialogOverviewExampleDialog } from './login/login.component';
 import { LabelComponent } from './label/label.component';
+import { TutorialComponent, DialogOverviewExampleDialogTutorial } from './tutorial/tutorial.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SpaceImageComponent } from './space-image/space-image.component';
 import { DialogDemoComponent } from './dialog-demo/dialog-demo.component';
@@ -21,7 +22,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     LoginComponent,
+    TutorialComponent,
     DialogOverviewExampleDialog,
+    DialogOverviewExampleDialogTutorial,
     LabelComponent,
     SpaceImageComponent,
     DialogDemoComponent,
@@ -29,6 +32,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   entryComponents: [
     DialogOverviewExampleDialog,
+    DialogOverviewExampleDialogTutorial,
   ],
   imports: [
     BrowserModule,
