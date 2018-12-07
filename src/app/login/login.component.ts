@@ -80,6 +80,7 @@
 // }
 import {Component, Inject} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 export interface DialogData {
   username: string;
@@ -92,21 +93,27 @@ export interface DialogData {
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  animal: string;
-  name: string;
+  userID: string;
+  loggedIn: boolean;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) {
+    this.loggedIn = false;
+  }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
       width: '300px',
-      data: {name: this.name, animal: this.animal}
+      data: {user: this.userID, loggedIn:this.loggedIn}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.animal = result;
+      this.userID = result;
     });
+  }
+
+  signout(): void {
+    console.log("Signout: "+this.userID)
   }
 }
 
@@ -116,13 +123,35 @@ export class LoginComponent {
   styleUrls: ['./login.component.css']
 })
 export class DialogOverviewExampleDialog {
+  loginForm: FormGroup;
+  submitted = false;
+  register = false;
+  login = true;
 
   constructor(
+    private formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+      this.loginForm = this.formBuilder.group({
+          username: ['', Validators.required],
+          password: ['', Validators.required]
+      });
+
+    }
+
+  get f() { return this.loginForm.controls; }
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  onSubmit() {
+      console.log(this.f.username.value)
+  }
+
+  switchMode() {
+    this.register = !this.register;
+    this.login = !this.login;
   }
 
 }

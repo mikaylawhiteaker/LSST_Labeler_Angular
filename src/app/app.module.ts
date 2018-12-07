@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SpaceImageComponent } from './space-image/space-image.component';
 import { DialogDemoComponent } from './dialog-demo/dialog-demo.component';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -33,6 +33,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MatDialogModule,
     BrowserAnimationsModule,

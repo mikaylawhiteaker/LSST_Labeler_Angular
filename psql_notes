@@ -1,0 +1,11 @@
+CREATE TABLE users(
+   id INT PRIMARY KEY     NOT NULL,
+   username       TEXT    NOT NULL,
+   password       TEXT    NOT NULL,
+   trained        BOOLEAN,
+);
+
+INSERT INTO users (id, username, password, trained) VALUES (1,'test', 'test', FALSE);
+
+
+need to make the id column itteerate auto
