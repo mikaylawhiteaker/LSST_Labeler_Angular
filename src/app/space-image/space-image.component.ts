@@ -11,7 +11,7 @@ export class SpaceImageComponent implements OnInit {
 
   link: string;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.getSpaceImage()
       .subscribe( (data: SpaceImage)  => this.link = JSON.parse(data.body)['url']);
   }
@@ -23,6 +23,19 @@ export class SpaceImageComponent implements OnInit {
     return this.http.get("https://bypff11t87.execute-api.us-west-2.amazonaws.com/default/random_image");
   }
 
+  LabeledYes(){
+    console.log("you labeled yes");
+  }
+
+  LabeledNo(){
+      console.log("you labeled no");
+  }
+
+  NextImage(){
+    console.log("you went to next image");
+      this.getSpaceImage()
+        .subscribe( (data: SpaceImage)  => this.link = JSON.parse(data.body)['url']);
+  }
 }
 
 class SpaceImage {

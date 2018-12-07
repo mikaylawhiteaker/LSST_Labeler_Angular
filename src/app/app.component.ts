@@ -10,9 +10,6 @@ export type EditorType = 'login';
 })
 export class AppComponent {
   title = 'LSST-Labeler';
-  yesLabel : boolean = false;
-  noLabel : boolean = false;
-  selectionMade : boolean = true;
   loggedIn : boolean = false;
   login : boolean = true;
   imageLabels : number[] = [];
@@ -64,6 +61,7 @@ export class AppComponent {
     }
     this.imageURL = this.imageURLs[this.imageCount];
   }
+
 
   Login(user: any)
   {

@@ -1,3 +1,18 @@
-<div>
-  <img id="space" src={{link}} >
+<div class="row">
+  <div class="col-9">
+    <img id="space" src={{link}} >
+  </div>
+  <div class="col-2">
+    <button (click)="LabeledYes()" class="test">
+      <i class="fas fa-check" style="padding-right:5px"></i>
+      Yup
+    </button>
+    <button (click)="LabeledNo()" class="test">
+      <i class="fas fa-times" style="padding-right:5px"></i>
+      Nope
+    </button>
+    <button (click)="NextImage()" class="test">
+      Submit
+    </button>
+  </div>
 </div>
