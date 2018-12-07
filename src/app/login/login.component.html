@@ -1,4 +1,11 @@
-<form *ngIf="!foundUser&&!registerb" [formGroup]="loginForm">
+<!-- open the mofal is not logged in-->
+<a *ngIf="!loggedIn" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" (click)="openDialog()">Login</a>
+
+
+<!-- signout if logged in -->
+<a *ngIf="loggedIn" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" (click)="signout()">Signout</a>
+
+<!-- <form *ngIf="!foundUser&&!registerb" [formGroup]="loginForm">
 
   <label>
     Username:
@@ -43,4 +50,4 @@
 </div>
 <div *ngIf="invalidloginb">
   <p> {{ invalidlogin }} </p>
-</div>
+</div> -->
