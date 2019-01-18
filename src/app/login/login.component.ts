@@ -1,4 +1,4 @@
-import {Component, Inject} from '@angular/core';
+import {Component, Inject, EventEmitter, Input, Output} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -15,6 +15,7 @@ export interface DialogData {
 export class LoginComponent {
   userID: string;
   loggedIn: boolean;
+  @Output() trained = new EventEmitter<boolean>();
 
   constructor(public dialog: MatDialog) {
     this.loggedIn = false;
@@ -28,6 +29,7 @@ export class LoginComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      this.trained.emit(false);
       this.userID = result;
     });
   }

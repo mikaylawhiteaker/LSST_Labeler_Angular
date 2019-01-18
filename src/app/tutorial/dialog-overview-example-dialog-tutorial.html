@@ -1,20 +1,9 @@
-<div *ngIf="pageOne">
-<h1 mat-dialog-title>Part {{tutorialPage}}</h1>
+<div>
+<h1 mat-dialog-title>{{titles[page]}}</h1>
 <p>
-  Welcome to the LSST Labeler Tutorial! Throughout this tutorial you will learn what to look for when labeling the images. Click next to continue.
+  {{contents[page]}}
 </p>
 <div mat-dialog-actions>
-  <button mat-button class="btn btn-primary" (click)="onNoClick()" style>Next</button>
-</div>
-</div>
-
-
-<div *ngIf="!pageOne">
-<h1 mat-dialog-title>Part {{tutorialPage}}</h1>
-<p>
-  Welcome to the LSST Labeler Tutorial! Throughout this tutorial you will learn what to look for when labeling the images. Click next to continue.
-</p>
-<div mat-dialog-actions>
-  <button mat-button class="btn btn-primary" (click)="onNoClick()" style>Next</button>
+  <button mat-button class="btn btn-primary" (click)="nextPage()" style>{{buttonText}}</button>
 </div>
 </div>

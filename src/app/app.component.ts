@@ -9,6 +9,7 @@ export type EditorType = 'login';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'LSST-Labeler';
   loggedIn : boolean = false;
   login : boolean = true;
@@ -22,17 +23,16 @@ export class AppComponent {
                     "https://s3-us-west-2.amazonaws.com/lsst-images/c5080b17-d532-4cc1-ab1a-8245fd3d490b.jpg"];
   imageURL: string = "http://en.es-static.us/upl/2011/07/regulus_leo_i_dwarf_Russell_Croman_600.jpg";
 
+  showTutorial:boolean;
 
-
-  Login(user: any)
-  {
-    this.login = false;
-    this.loggedIn = true;
+  constructor() {
+    this.showTutorial = true;
   }
 
-  newUser()
-  {
-    this.login = false;
-    this.loggedIn = true;
+  onLoginChange(trained: boolean) {
+    this.showTutorial = !trained;
+    console.log("got login change")
   }
+
+
 }
