@@ -1,7 +1,13 @@
 <h1 class="uppercase" style = "padding-left:360px">
   LSST Labeler Tutorial
 </h1>
-<button class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" (click)="openDialog()">Start</button>
+<div class="row" style = "padding-left:50px">
+  <button class="btn-secondary" (click)="openDialog()">Start</button>
+  <button class="btn-secondary" (click)="[openDialog(), oneClick()]">1</button>
+  <button class="btn-secondary" (click)="[openDialog(), twoClick()]">2</button>
+  <button class="btn-secondary" (click)="[openDialog(), threeClick()]">3</button>
+  <button class="btn-secondary" (click)="[openDialog(), fourClick()]">4</button>
+</div>
 <div class=container>
   <div class="row">
     <app-space-image></app-space-image>

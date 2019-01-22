@@ -16,6 +16,7 @@ export interface DialogData {
 export class TutorialComponent {
   animal: string;
   name: string;
+  page: number = 0;
 
 
   constructor(public dialog: MatDialog) {
@@ -60,6 +61,7 @@ export class DialogOverviewExampleDialogTutorial {
   ];
   page : number = 0;
   buttonText : string;
+  isClose : boolean = false;
 
   constructor(
     public dialogRef: MatDialogRef<DialogOverviewExampleDialogTutorial>,
@@ -69,14 +71,19 @@ export class DialogOverviewExampleDialogTutorial {
 
   nextPage(): void {
     this.page++;
-    if(this.page = 4) {
+    if(this.isClose) {
+      this.dialogRef.close();
+    }
+    if(this.page == 4) {
       this.buttonText = "Close";
+      this.isClose = true;
     }
     if(this.page > 4) {
       this.dialogRef.close();
     }
-
   }
+
+
 
 
 }
