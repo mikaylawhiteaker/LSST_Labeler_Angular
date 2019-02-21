@@ -1,12 +1,15 @@
-<h1 class="uppercase" style = "padding-left:360px">
-  LSST Labeler Tutorial
+<h1 class="uppercase" style = "padding-left:160px">
+  Welcome to the LSST Labeler Tutorial
 </h1>
-<div class="row" style = "padding-left:86px">
+<h3 *ngIf="showintro" class="uppercase" style = "padding-left:160px">
+  Please press start to begin and follow instructions
+</h3>
+<div class="row" style = "padding-left:120px">
   <button class="btn-secondary" (click)="openDialog()">Start</button>
-  <button class="btn-secondary" (click)="[openDialog(), oneClick()]">1</button>
-  <button class="btn-secondary" (click)="[openDialog(), twoClick()]">2</button>
-  <button class="btn-secondary" (click)="[openDialog(), threeClick()]">3</button>
-  <button class="btn-secondary" (click)="[openDialog(), fourClick()]">4</button>
+  <button *ngIf="show1" class="btn-secondary" (click)="openDialog1()">1</button>
+  <button *ngIf="show2" class="btn-secondary" (click)="openDialog2()">2</button>
+  <button *ngIf="show3" class="btn-secondary" (click)="openDialog3()">3</button>
+  <button *ngIf="show4" class="btn-secondary" (click)="openDialog4()">4</button>
 </div>
 <div class=container>
   <div class="row">
