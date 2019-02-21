@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import * as $ from 'jquery';
 
 export type EditorType = 'login';
 
