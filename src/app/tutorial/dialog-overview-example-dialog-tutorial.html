@@ -4,6 +4,9 @@
     {{contents[page]}}
   </p>
   <div mat-dialog-actions>
+    <button *ngIf="!isFirst" mat-button class="btn btn-tutorial" (click)="prevPage()" style>
+        <i class="fa fa-arrow-left" style="padding-right:5px"></i>Previous
+    </button>
     <button mat-button class="btn btn-tutorial" (click)="nextPage()" style>{{buttonText}}
         <i *ngIf="!isClose" class="fa fa-arrow-right" style="padding-right:5px"></i>
         <i *ngIf="isClose" class="fas fa-times" style="padding-right:5px"></i>
