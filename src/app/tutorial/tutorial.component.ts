@@ -288,21 +288,20 @@ export class DialogOverviewExampleDialogTutorial2 {
 export class DialogOverviewExampleDialogTutorial3 {
   titles : string[] = [
     "Comets vs Stars",
-    "insert part 4 page 2 data here",
-    "insert part 4 page 3 data here",
-    "insert part 4 page 4 data here",
-    "insert part 4 page 5 data here",
+    "The tail of a comet",
+    "The tail of a comet",
+    "Try it",
   ];
   contents : string[] = [
-    "insert part 4 page 1 data here",
-    "insert part 4 page 2 data here",
-    "insert part 4 page 3 data here",
-    "insert part 4 page 4 data here",
-    "insert part 4 page 5 data here",
+    "Comets are small icy round objects that will be more easily seen when they approach the sun.",
+    "When a commet gets close to the sun it heats up and starts to release gases. This will appear in the form of a tail.",
+    "A tail may not be near as bright as the actual object but the light reflecting from it will cause the object to not appear symmetrical",
+    "Look at the following images and try to recognize whether or not the object has a tail or not.",
   ];
   page : number = 0;
   buttonText : string;
   isClose : boolean = false;
+  isFirst : boolean = true;
 
   constructor(
     public dialogRef: MatDialogRef<DialogOverviewExampleDialogTutorial>,
@@ -312,6 +311,68 @@ export class DialogOverviewExampleDialogTutorial3 {
 
   nextPage(): void {
     this.page++;
+    this.isFirst = false;
+    if(this.isClose) {
+      this.dialogRef.close();
+    }
+    if(this.page == 3) {
+      this.buttonText = "Close";
+      this.isClose = true;
+    }
+    if(this.page > 3) {
+      this.dialogRef.close();
+    }
+  }
+  prevPage(): void {
+      if(!this.isFirst) {
+        this.page--;
+        if(this.page == 0)
+        {
+          this.isFirst = true;
+        }
+        if(this.isClose)
+        {
+          this.isClose = false;
+          this.buttonText = "Next";
+        }
+      }
+    }
+}
+
+@Component({
+  selector: 'dialog-overview-example-dialog-tutorial-4',
+  templateUrl: 'dialog-overview-example-dialog-tutorial-4.html',
+  styleUrls: ['./tutorial.component.css']
+})
+export class DialogOverviewExampleDialogTutorial4 {
+  titles : string[] = [
+    "Review",
+    "Recognize Characteristics",
+    "Put it all together",
+    "Make a determination",
+    "Try it",
+  ];
+  contents : string[] = [
+    "Now that we have gone over some easy to identfy characteristics of space objects we can now put them all together.",
+    "When labeling images look for these defining characteristics and remember which ones identify an object as a star and which ones do not.",
+    "After you examine the image and recognize characteristics, determine which ones are most prominent and whether the image is either most likely a star or not.",
+    "Once you have decided make a determination and submit it.",
+    "Before you start labeling actual images try to label these next few images to truely get the hang of it.",
+  ];
+  page : number = 0;
+  buttonText : string;
+  isClose : boolean = false;
+  isFirst : boolean = true;
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogOverviewExampleDialogTutorial>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+      this.buttonText = "Next";
+    }
+
+  nextPage(): void {
+    this.page++;
+    this.isFirst = false;
     if(this.isClose) {
       this.dialogRef.close();
     }
@@ -323,49 +384,18 @@ export class DialogOverviewExampleDialogTutorial3 {
       this.dialogRef.close();
     }
   }
-}
-
-@Component({
-  selector: 'dialog-overview-example-dialog-tutorial-4',
-  templateUrl: 'dialog-overview-example-dialog-tutorial-4.html',
-  styleUrls: ['./tutorial.component.css']
-})
-export class DialogOverviewExampleDialogTutorial4 {
-  titles : string[] = [
-    "Welcome to the LSST Data Labeler tutorial part 5",
-    "insert part 5 page 2 data here",
-    "insert part 5 page 3 data here",
-    "insert part 5 page 4 data here",
-    "insert part 5 page 5 data here",
-  ];
-  contents : string[] = [
-    "insert part 5 page 1 data here",
-    "insert part 5 page 2 data here",
-    "insert part 5 page 3 data here",
-    "insert part 5 page 4 data here",
-    "insert part 5 page 5 data here",
-  ];
-  page : number = 0;
-  buttonText : string;
-  isClose : boolean = false;
-
-  constructor(
-    public dialogRef: MatDialogRef<DialogOverviewExampleDialogTutorial>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
-      this.buttonText = "Next";
-    }
-
-  nextPage(): void {
-    this.page++;
-    if(this.isClose) {
-      this.dialogRef.close();
-    }
-    if(this.page == 4) {
-      this.buttonText = "Close";
-      this.isClose = true;
-    }
-    if(this.page > 4) {
-      this.dialogRef.close();
+  prevPage(): void {
+    if(!this.isFirst) {
+      this.page--;
+      if(this.page == 0)
+      {
+        this.isFirst = true;
+      }
+      if(this.isClose)
+      {
+        this.isClose = false;
+        this.buttonText = "Next";
+      }
     }
   }
 }
