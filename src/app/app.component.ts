@@ -4,6 +4,8 @@ import * as $ from 'jquery';
 
 export type EditorType = 'login';
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
