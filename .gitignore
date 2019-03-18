@@ -5,6 +5,9 @@
 /tmp
 /out-tsc
 
+# large fits file
+/src/assets/img/patch_1_1.fits
+
 # dependencies
 /node_modules
 
