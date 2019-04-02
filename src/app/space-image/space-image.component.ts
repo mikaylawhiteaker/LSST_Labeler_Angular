@@ -31,7 +31,7 @@ export class SpaceImageComponent implements OnInit {
         console.log(this.label);
         console.log(this.x_coord);
         console.log(this.y_coord);
-
+        
         let imageSetUp = function(x, y) {
           console.log(JS9.GetLoadStatus(this.url));
           // JS9.SetZoom("toFit");

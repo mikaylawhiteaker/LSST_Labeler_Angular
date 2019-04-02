@@ -1,18 +1,16 @@
-<h1 class="uppercase" style = "padding-left:160px">
-  Welcome to the LSST Labeler Tutorial
-</h1>
-<h3 *ngIf="showintro" class="uppercase" style = "padding-left:160px">
-  Please press start to begin and follow instructions
-</h3>
-<div class="row" style = "padding-left:120px">
-  <button class="btn-secondary" (click)="openDialog()">Start</button>
-  <button *ngIf="show1" class="btn-secondary" (click)="openDialog1()">1</button>
-  <button *ngIf="show2" class="btn-secondary" (click)="openDialog2()">2</button>
-  <button *ngIf="show3" class="btn-secondary" (click)="openDialog3()">3</button>
-  <button *ngIf="show4" class="btn-secondary" (click)="openDialog4()">4</button>
-</div>
-<div class=container>
+<div id="tutorial">
+  <h1 class="uppercase" style="text-align:center;">
+    Labeler Tutorial
+  </h1>
+  <hr>
+  <p *ngIf="showintro" style="text-align:center;">
+    Please follow this tutorial to learn how to classify stars
+  </p>
   <div class="row">
-    <app-space-image></app-space-image>
+    <button *ngIf="show0"  class="btn-secondary rounded start-button" (click)="openDialog()">Start</button>
+    <button *ngIf="show1" class="btn-secondary rounded start-button" (click)="openDialog1()">Part 2</button>
+    <button *ngIf="show2" class="btn-secondary rounded start-button" (click)="openDialog2()">Part 3</button>
+    <button *ngIf="show3" class="btn-secondary rounded start-button" (click)="openDialog3()">Part 4</button>
+    <button *ngIf="show4" class="btn-secondary rounded start-button" (click)="openDialog4()">Part 5</button>
   </div>
 </div>

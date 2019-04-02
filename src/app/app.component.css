@@ -37,6 +37,11 @@ h3{
   padding-top: 2%;
 }
 
+#label-row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
 .test{
   height:75px;
   width:175px;

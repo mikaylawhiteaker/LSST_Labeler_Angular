@@ -17,6 +17,7 @@ export class TutorialComponent {
   animal: string;
   name: string;
   page: number = 0;
+  show0: boolean = true;
   show1: boolean = false;
   show2: boolean = false;
   show3: boolean = false;
@@ -42,6 +43,7 @@ export class TutorialComponent {
       console.log('The dialog was closed');
       this.animal = result;
     });
+    this.show0 = false;
     this.show1 = true;
     this.show = true;
     this.showintro = false;
@@ -57,6 +59,7 @@ export class TutorialComponent {
       console.log('The dialog was closed');
       this.animal = result;
     });
+    this.show1 = false;
     this.show2 = true;
   }
 
@@ -70,6 +73,7 @@ export class TutorialComponent {
       console.log('The dialog was closed');
       this.animal = result;
     });
+    this.show2 = false;
     this.show3 = true;
   }
 
@@ -83,6 +87,7 @@ export class TutorialComponent {
       console.log('The dialog was closed');
       this.animal = result;
     });
+    this.show3 = false;
     this.show4 = true;
   }
 
@@ -96,7 +101,8 @@ export class TutorialComponent {
       console.log('The dialog was closed');
       this.animal = result;
     });
-    this.show4 = true;
+    this.show4 = false;
+    this.show0 = true;
   }
 
 }
