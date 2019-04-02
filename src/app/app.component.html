@@ -35,8 +35,14 @@
 
 <!-- label Grid Section -->
 <section class="label" id="label">
-  <app-tutorial *ngIf="showTutorial"></app-tutorial>
-  <app-label *ngIf="!showTutorial"></app-label>
+  <div class="row" id="label-row">
+    <div class="col-sm-7">
+      <app-space-image></app-space-image>
+    </div>
+    <div class="col-sm-3">
+      <app-tutorial *ngIf="showTutorial"></app-tutorial>
+    </div>
+  </div>
 </section>
 
 <!-- About Section -->

@@ -1,3 +1,13 @@
 .login-inputs {
     margin-left: -1% !important;
 }
+
+.start-button {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#tutorial {
+  margin-top: 33%;
+}

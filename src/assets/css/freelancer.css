@@ -357,6 +357,12 @@ a:focus, a:hover, a:active {
   background-color: #2C3E50 !important;
 }
 
+.text-buttonLabels {
+  color: #FFFFFF !important;
+  font-size: 2.5em;
+  font-family: "Castellar", Charcoal, sans-serif;
+}
+
 .text-primary {
   color: #18BC9C !important;
 }
@@ -368,6 +374,14 @@ a:focus, a:hover, a:active {
 .btn-primary {
   background-color: #18BC9C;
   border-color: #18BC9C;
+  width: 200px;
+  height: 100px;
+}
+
+.btn-tutorial{
+  background-color: #18BC9C;
+  border-color: #18BC9C;
+  shape-margin: circle;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
@@ -378,6 +392,7 @@ a:focus, a:hover, a:active {
 .btn-secondary {
   background-color: #2C3E50;
   border-color: #2C3E50;
+  width: 75px;
 }
 
 .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {

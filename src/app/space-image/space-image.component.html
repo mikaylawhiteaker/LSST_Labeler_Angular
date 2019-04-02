@@ -1,18 +1,32 @@
 <div class="row">
-  <div class="col-9">
-    <img id="space" src={{link}} >
+  <div class="col-9" id="jsContainer">
+    <!-- <div class="JS9Menubar"></div> -->
+    <div class="JS9" id="JS9"></div>
   </div>
   <div class="col-2">
-    <button (click)="LabeledYes()" class="btn-primary rounded">
-      <i class="fas fa-check" style="padding-right:5px"></i>
-      Yes
-    </button>
-    <button (click)="LabeledNo()" class="btn-primary rounded">
-      <i class="fas fa-times" style="padding-right:5px"></i>
-      No
-    </button>
-    <button (click)="NextImage()" class="btn-primary rounded">
-      Submit
-    </button>
+      <button (click)="LabeledYes()" class="btn-primary rounded">
+        <div class="text-buttonLabels">
+          <i class="fas fa-check" style="padding-right:5px"></i>
+          Yes
+          </div>
+      </button>
+    <div style="padding-top:10px">
+      <button (click)="LabeledNo()" class="btn-primary rounded">
+        <div class="text-buttonLabels">
+          <i class="fas fa-times" style="padding-right:5px"></i>
+          No
+        </div>
+      </button>
+    </div>
+    <div style="padding-top:10px">
+      <button (click)="NextImage()" class="btn-primary rounded">
+        <div class="text-buttonLabels">
+          Next
+        </div>
+      </button>
+    </div>
+    <div style="padding-top:10px">
+      <p id="label-info">{{this.info}}</p>
+    </div>
   </div>
 </div>
